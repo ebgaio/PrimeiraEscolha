@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cliente CRUD</title>
+    <style>
+        /* Here you can add your CSS rules */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 1em;
+        }
+    </style>
+    <script>
+        var baseURL = "http://localhost:8080/clientes";
+
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch(baseURL)
+                .then(response => response.json())
+                .then(data => console.log(data));
+        });
+
+        function createCliente() {
+            var newCliente = {
+                cpf: document.getElementById("cpf").value,
+                // add other fields
+            };
+            fetch(baseURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newCliente),
+            })
+                .then(response => response.json())
+                .then(client => {
+                    console.log('Cliente created: ', client);
+                    document.location.reload();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function updateCliente(id) {
+            var updatedCliente = {
+                id: id,
+                cpf: document.getElementById("cpf"+id).value,
+                // add other fields
+            };
+            fetch(baseURL+'/'+id, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedCliente),
+            })
+                .then(response => response.json())
+                .then(client => {
+                    console.log('Cliente updated: ', client);
+                    document.location.reload();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function deleteCliente(id) {
+            fetch(baseURL + '/' + id, {
+                method: 'DELETE'
+            })
+                .then(() => {
+                    console.log('Cliente deleted: ', id);
+                    document.location.reload();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+<!-- main code here -->
+<h1>Cliente CRUD</h1>
+<!-- Include code for forms and tables here -->
+</body>
+</html>
