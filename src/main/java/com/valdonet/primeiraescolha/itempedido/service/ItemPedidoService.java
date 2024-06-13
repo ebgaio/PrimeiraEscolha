@@ -3,11 +3,7 @@ package com.valdonet.primeiraescolha.itempedido.service;
 import com.valdonet.primeiraescolha.itempedido.model.ItemPedido;
 import com.valdonet.primeiraescolha.itempedido.model.ItemPedidoDTO;
 import com.valdonet.primeiraescolha.itempedido.repository.ItemPedidoRepository;
-import com.valdonet.primeiraescolha.pedido.model.Pedido;
-import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
 import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
-import com.valdonet.primeiraescolha.pessoa.cliente.model.Cliente;
-import com.valdonet.primeiraescolha.pessoa.cliente.repository.ClienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

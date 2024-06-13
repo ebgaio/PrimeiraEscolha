@@ -1,8 +1,5 @@
 package com.valdonet.primeiraescolha.fatura.controller;
 
-import com.valdonet.primeiraescolha.entrega.model.Entrega;
-import com.valdonet.primeiraescolha.entrega.model.EntregaDTO;
-import com.valdonet.primeiraescolha.entrega.service.EntregaService;
 import com.valdonet.primeiraescolha.fatura.model.Fatura;
 import com.valdonet.primeiraescolha.fatura.model.FaturaDTO;
 import com.valdonet.primeiraescolha.fatura.service.FaturaService;

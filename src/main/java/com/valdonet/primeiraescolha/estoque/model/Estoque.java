@@ -1,6 +1,5 @@
 package com.valdonet.primeiraescolha.estoque.model;
 
-import com.valdonet.primeiraescolha.pessoa.Pessoa;
 import com.valdonet.primeiraescolha.pessoa.fornecedor.model.Fornecedor;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;

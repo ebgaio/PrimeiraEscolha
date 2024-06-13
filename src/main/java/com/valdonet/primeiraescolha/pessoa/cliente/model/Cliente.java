@@ -1,7 +1,6 @@
 package com.valdonet.primeiraescolha.pessoa.cliente.model;
 
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
-import com.valdonet.primeiraescolha.pessoa.Endereco;
 import com.valdonet.primeiraescolha.pessoa.Pessoa;
 import jakarta.persistence.*;
 import lombok.Getter;
