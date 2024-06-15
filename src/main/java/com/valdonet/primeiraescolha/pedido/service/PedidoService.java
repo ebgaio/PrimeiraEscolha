@@ -3,8 +3,8 @@ package com.valdonet.primeiraescolha.pedido.service;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
 import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
-import com.valdonet.primeiraescolha.pessoa.cliente.model.Cliente;
-import com.valdonet.primeiraescolha.pessoa.cliente.repository.ClienteRepository;
+import com.valdonet.primeiraescolha.cliente.model.Cliente;
+import com.valdonet.primeiraescolha.cliente.repository.ClienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -52,22 +52,19 @@ public class PedidoService {
 
     public void changePedido(PedidoDTO pedidoDto) {
 
-        Optional<Cliente> cliente = clienteRepository.findClienteByNome(pedidoDto.getCliente().getNome());
-        if (cliente.isEmpty()) {
-            System.out.println("Cliente não encontrado");
-        }
-
-        Optional<Pedido> pedido = repository.findById(cliente.get().getId());
-        if (pedido.isEmpty()) {
-            System.out.println("Pedido não encontrado.");
-        }
-
-        pedido.get().setStatusPedido(pedidoDto.getStatusPedido());
-        pedido.get().setDataPedido(pedidoDto.getDataPedido());
-        repository.save(pedido.get());
+//        Optional<Cliente> cliente = clienteRepository.findClienteByNome(pedidoDto.getCliente().getNome());
+//        if (cliente.isEmpty()) {
+//            System.out.println("Cliente não encontrado");
+//        }
+//
+//        Optional<Pedido> pedido = repository.findById(cliente.get().getId());
+//        if (pedido.isEmpty()) {
+//            System.out.println("Pedido não encontrado.");
+//        }
+//
+//        pedido.get().setStatusPedido(pedidoDto.getStatusPedido());
+//        pedido.get().setDataPedido(pedidoDto.getDataPedido());
+//        repository.save(pedido.get());
     }
 
-    public Pedido listPedido(Long id) {
-        return repository.findById(id).orElse(null);
-    }
 }

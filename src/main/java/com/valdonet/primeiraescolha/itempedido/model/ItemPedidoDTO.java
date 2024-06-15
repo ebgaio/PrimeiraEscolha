@@ -12,6 +12,4 @@ public class ItemPedidoDTO {
 
     private BigDecimal precoUnitario;
 
-    private Produto produto;
-
 }

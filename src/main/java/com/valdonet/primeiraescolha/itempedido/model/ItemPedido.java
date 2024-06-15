@@ -13,7 +13,7 @@ import java.util.Objects;
 @Setter
 @RequiredArgsConstructor
 @Entity
-@Table(name = "itemPedido")
+@Table(name = "item_pedido")
 public class ItemPedido {
 
     @Id
@@ -24,7 +24,7 @@ public class ItemPedido {
     @Column(name = "quantidade")
     private Long quantidade;
 
-    @Column(name = "precoUnitario")
+    @Column(name = "preco_unitario")
     private BigDecimal precoUnitario;
 
     @OneToOne

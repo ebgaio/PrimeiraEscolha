@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.valdonet</groupId>
-    <artifactId>primeiraEscolha</artifactId>
+    <artifactId>primeira-escolha</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>primeiraEscolha</name>
-    <description>primeiraEscolha</description>
+    <name>primeira-Escolha</name>
+    <description>primeira-Escolha</description>
     <properties>
         <java.version>17</java.version>
     </properties>

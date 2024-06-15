@@ -34,7 +34,6 @@ public class ItemPedidoService {
 
         itemPedido.setQuantidade (itemPedidoDto.getQuantidade ());
         itemPedido.setPrecoUnitario (itemPedidoDto.getPrecoUnitario ());
-        itemPedido.setProduto (itemPedidoDto.getProduto ());
         itemPedido = repository.save(itemPedido);
 
         return itemPedido;

@@ -1,6 +1,6 @@
 package com.valdonet.primeiraescolha.estoque.model;
 
-import com.valdonet.primeiraescolha.pessoa.fornecedor.model.Fornecedor;
+import com.valdonet.primeiraescolha.fornecedor.model.Fornecedor;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -20,12 +20,12 @@ import java.util.Objects;
 public class Estoque {
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_fornecedor")
     private Fornecedor fornecedor;
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_produto")
     private Produto produto;
 

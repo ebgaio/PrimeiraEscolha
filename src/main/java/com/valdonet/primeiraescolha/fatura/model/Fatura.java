@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.fatura.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,12 +23,17 @@ public class Fatura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "dataFatura")
+    @Column(name = "data_fatura")
     private LocalDateTime dataFatura;
 
-    @Column(name = "valorTotal")
+    @Column(name = "valor_total")
     private BigDecimal valorTotal;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_fatura")
+    private StatusFatura statusFatura;
+
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)
     private Pedido pedido;

@@ -33,7 +33,6 @@ public class FaturaService {
         Fatura fatura  = new Fatura();
 
         fatura.setDataFatura (faturaDto.getDataFatura ());
-        fatura.setPedido (faturaDto.getPedido ());
         fatura.setValorTotal (faturaDto.getValorTotal ());
         fatura = repository.save(fatura);
 

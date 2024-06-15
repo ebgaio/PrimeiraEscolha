@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.pedido.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.entrega.model.Entrega;
 import com.valdonet.primeiraescolha.itempedido.model.ItemPedido;
 import jakarta.persistence.*;
@@ -24,16 +25,18 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "dataPedido")
+    @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
 
-    @Column(name = "statusPedido")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_pedido")
     private StatusPedido statusPedido;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
     private List<ItemPedido> itemPedidos = new ArrayList<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)
     private Entrega entrega;
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/primeiraescolha")
+@RequestMapping("/primeira-escolha")
 @RestController
 @AllArgsConstructor
 public class PedidoController {
@@ -29,14 +29,6 @@ public class PedidoController {
     public ResponseEntity<List<Pedido>> listAllPedidos() {
 
         List<Pedido> pedido = service.listAllPedidos();
-
-        return ResponseEntity.status(HttpStatus.OK).body(pedido);
-    }
-
-    @GetMapping("/pedido/cliente/{cliente}")
-    public ResponseEntity<Pedido> listAllPedidos(@PathVariable Long id) {
-
-        Pedido pedido = service.listPedido(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(pedido);
     }

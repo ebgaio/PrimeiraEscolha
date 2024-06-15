@@ -1,7 +1,7 @@
     CREATE TABLE ENTREGA (
 	id BIGINT NOT NULL,
-    dataEntrega DATE NULL,
-    statusEntrega VARCHAR(30) NOT NULL,
+    data_entrega DATE NULL,
+    status_entrega VARCHAR(30) NOT NULL,
     id_pedido BIGINT NULL,
     PRIMARY KEY (id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

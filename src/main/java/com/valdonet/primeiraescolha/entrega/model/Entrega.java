@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.entrega.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,12 +23,14 @@ public class Entrega {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "dataEntrega")
+    @Column(name = "data_entrega")
     private LocalDateTime dataEntrega;
 
-    @Column(name = "statusEntrega")
-    private BigDecimal statusEntrega;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_entrega")
+    private StatusEntrega statusEntrega;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)
     private Pedido pedido;

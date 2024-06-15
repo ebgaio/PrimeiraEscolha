@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/primeiraescolha")
+@RequestMapping("/primeira-escolha")
 @RestController
 @AllArgsConstructor
 public class ProdutoController {

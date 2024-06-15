@@ -34,7 +34,6 @@ public class EntregaService {
 
         entrega.setDataEntrega (entregaDto.getDataEntrega ());
         entrega.setStatusEntrega (entregaDto.getStatusEntrega ());
-        entrega.setPedido (entregaDto.getPedido ());
         entrega = repository.save(entrega);
 
         return entrega;

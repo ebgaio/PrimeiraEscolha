@@ -1,7 +1,7 @@
 CREATE TABLE PEDIDO (
     id BIGINT NOT NULL AUTO_INCREMENT,
-	dataPedido DATE NOT NULL,
-    statusPedido VARCHAR(30) NOT NULL,
+	data_pedido DATE NOT NULL,
+    status_pedido VARCHAR(30) NOT NULL,
     id_cliente BIGINT NOT NULL,
     PRIMARY KEY (id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

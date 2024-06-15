@@ -3,7 +3,7 @@ package com.valdonet.primeiraescolha.estoque.service;
 import com.valdonet.primeiraescolha.estoque.model.Estoque;
 import com.valdonet.primeiraescolha.estoque.model.EstoqueDTO;
 import com.valdonet.primeiraescolha.estoque.repository.EstoqueRepository;
-import com.valdonet.primeiraescolha.pessoa.fornecedor.repository.FornecedorRepository;
+import com.valdonet.primeiraescolha.fornecedor.repository.FornecedorRepository;
 import com.valdonet.primeiraescolha.produto.repository.ProdutoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

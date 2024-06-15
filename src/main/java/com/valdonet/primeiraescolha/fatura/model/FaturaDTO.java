@@ -13,5 +13,4 @@ public class FaturaDTO {
 
     private BigDecimal valorTotal;
 
-    private Pedido pedido;
 }

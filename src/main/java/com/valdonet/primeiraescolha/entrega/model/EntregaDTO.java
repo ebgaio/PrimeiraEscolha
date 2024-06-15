@@ -11,7 +11,6 @@ public class EntregaDTO {
 
     private LocalDateTime dataEntrega;
 
-    private BigDecimal statusEntrega;
+    private StatusEntrega statusEntrega;
 
-    private Pedido pedido;
 }
