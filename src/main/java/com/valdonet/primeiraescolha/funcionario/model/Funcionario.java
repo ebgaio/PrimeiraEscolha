@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.funcionario.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,7 +24,9 @@ public class Funcionario extends Pessoa{
     @Column(name = "cpf")
     private String cpf;
 
-    @OneToOne
+//    @Getter
+//    @JsonIgnore
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "funcionario")
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     private Pessoa pessoa;
 

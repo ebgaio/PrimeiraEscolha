@@ -1,7 +1,7 @@
 package com.valdonet.primeiraescolha.produto.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.valdonet.primeiraescolha.itempedido.model.ItemPedido;
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.fornecedor.model.Fornecedor;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -39,14 +39,16 @@ public class Produto {
     @Column(name = "preco")
     private BigDecimal preco;
 
+    @Getter
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "produtos")
     private Set<Fornecedor> fornecedores = new HashSet<> ();
 
+//    @Getter
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
-    private ItemPedido intemProduto;
+    private ItensPedido intensPedido;
 
     @Override
     public boolean equals(Object o) {

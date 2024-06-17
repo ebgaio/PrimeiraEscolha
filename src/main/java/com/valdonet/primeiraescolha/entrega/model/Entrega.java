@@ -30,6 +30,7 @@ public class Entrega {
     @Column(name = "status_entrega")
     private StatusEntrega statusEntrega;
 
+    @Getter
     @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)

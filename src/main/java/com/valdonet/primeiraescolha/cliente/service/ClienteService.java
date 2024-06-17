@@ -33,6 +33,7 @@ public class ClienteService {
         Cliente cliente  = new Cliente();
 
         cliente.setCpf(clienteDto.getCpf ());
+        cliente.setPessoa(clienteDto.getPessoa ());
         cliente = repository.save(cliente);
 
         return cliente;

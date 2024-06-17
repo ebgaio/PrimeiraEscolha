@@ -29,10 +29,13 @@ public class Cliente extends Pessoa {
     @Column(name = "cpf")
     private String cpf;
 
+    @Getter
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     private Pessoa pessoa;
 
+    @Getter
     @JsonIgnore
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<> ();

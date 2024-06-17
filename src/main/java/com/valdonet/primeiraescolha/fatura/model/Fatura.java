@@ -33,6 +33,7 @@ public class Fatura {
     @Column(name = "status_fatura")
     private StatusFatura statusFatura;
 
+    @Getter
     @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)

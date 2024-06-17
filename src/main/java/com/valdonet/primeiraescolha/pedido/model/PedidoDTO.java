@@ -1,7 +1,6 @@
 package com.valdonet.primeiraescolha.pedido.model;
 
-import com.valdonet.primeiraescolha.cliente.model.Cliente;
-import com.valdonet.primeiraescolha.itempedido.model.ItemPedido;
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -14,5 +13,5 @@ public class PedidoDTO {
 
     private StatusPedido statusPedido;
 
-    List<ItemPedido> itemPedidos;
+    List<ItensPedido> itensPedido;
 }

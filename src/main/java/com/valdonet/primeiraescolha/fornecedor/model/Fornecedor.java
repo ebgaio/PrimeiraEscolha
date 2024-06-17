@@ -28,11 +28,14 @@ public class Fornecedor extends Pessoa {
     @Column(name = "cnpj")
     private String cnpj;
 
+    @Getter
     @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     private Pessoa pessoa;
 
+    @Getter
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "estoque",

@@ -1,8 +1,7 @@
 package com.valdonet.primeiraescolha.pedido.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.valdonet.primeiraescolha.entrega.model.Entrega;
-import com.valdonet.primeiraescolha.itempedido.model.ItemPedido;
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -32,13 +31,10 @@ public class Pedido {
     @Column(name = "status_pedido")
     private StatusPedido statusPedido;
 
+    @Getter
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
-    private List<ItemPedido> itemPedidos = new ArrayList<>();
-
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)
-    private Entrega entrega;
+    private List<ItensPedido> itensPedido = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {

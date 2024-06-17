@@ -1,5 +1,6 @@
-package com.valdonet.primeiraescolha.itempedido.model;
+package com.valdonet.primeiraescolha.itenspedido.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,8 +14,8 @@ import java.util.Objects;
 @Setter
 @RequiredArgsConstructor
 @Entity
-@Table(name = "item_pedido")
-public class ItemPedido {
+@Table(name = "itens_pedido")
+public class ItensPedido {
 
     @Id
     @Column(name = "id")
@@ -27,6 +28,8 @@ public class ItemPedido {
     @Column(name = "preco_unitario")
     private BigDecimal precoUnitario;
 
+    @Getter
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)
     private Produto produto;
@@ -35,7 +38,7 @@ public class ItemPedido {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ItemPedido that = (ItemPedido) o;
+        ItensPedido that = (ItensPedido) o;
         return Objects.equals(id, that.id);
     }
 
