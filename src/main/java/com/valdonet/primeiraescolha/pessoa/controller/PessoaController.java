@@ -18,9 +18,9 @@ public class PessoaController {
     private final PessoaService service;
 
     @GetMapping("/pessoa/{id}")
-    public ResponseEntity getPessoa(@PathVariable("id") Long id) {
+    public ResponseEntity<PessoaDTO> getPessoa(@PathVariable("id") Long id) {
 
-        Pessoa pessoa = service.getPessoa(id);
+        PessoaDTO pessoa = service.getPessoa(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(pessoa);
     }
@@ -29,14 +29,6 @@ public class PessoaController {
     public ResponseEntity<List<Pessoa>> listAllPessoas() {
 
         List<Pessoa> pessoa = service.listAllPessoas();
-
-        return ResponseEntity.status(HttpStatus.OK).body(pessoa);
-    }
-
-    @GetMapping("/pessoa/cliente/{cliente}")
-    public ResponseEntity<Pessoa> listAllPessoas(@PathVariable Long id) {
-
-        Pessoa pessoa = service.listPessoa(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(pessoa);
     }

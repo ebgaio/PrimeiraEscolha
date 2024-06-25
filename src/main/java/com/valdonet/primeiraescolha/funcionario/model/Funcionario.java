@@ -24,9 +24,9 @@ public class Funcionario extends Pessoa{
     @Column(name = "cpf")
     private String cpf;
 
-//    @Getter
-//    @JsonIgnore
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "funcionario")
+    @Getter
+    @JsonIgnore
+    @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
     private Pessoa pessoa;
 

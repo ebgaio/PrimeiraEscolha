@@ -1,7 +1,9 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+@AllArgsConstructor
 @Data
 public class PessoaDTO {
 

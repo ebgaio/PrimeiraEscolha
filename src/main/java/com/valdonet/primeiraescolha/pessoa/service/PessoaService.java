@@ -18,15 +18,15 @@ public class PessoaService {
     private final PessoaRepository repository;
     private final ClienteRepository clienteRepository;
 
-    public Pessoa getPessoa(Long id) {
+    public PessoaDTO getPessoa(Long id) {
 
-        Optional<Pessoa> pessoa = repository.findById(id);
+        Optional<PessoaDTO> pessoaDTO = repository.findPessoaPorId(id);
 
-        if (!pessoa.isPresent()) {
+        if (!pessoaDTO.isPresent()) {
             return null;
         }
 
-        return pessoa.get();
+        return pessoaDTO.get();
     }
 
     public Pessoa save(PessoaDTO pessoaDto) {

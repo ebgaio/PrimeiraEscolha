@@ -46,19 +46,19 @@ public class Pessoa {
     @Getter
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_cliente", referencedColumnName = "id", insertable = false, updatable = false)
     private Cliente cliente;
 
     @Getter
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id", insertable = false, updatable = false)
     private Funcionario funcionario;
 
     @Getter
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_fornecedor", referencedColumnName = "id", insertable = false, updatable = false)
     private Fornecedor fornecedor;
 
     @Override
