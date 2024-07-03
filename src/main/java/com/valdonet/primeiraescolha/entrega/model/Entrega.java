@@ -1,6 +1,7 @@
 package com.valdonet.primeiraescolha.entrega.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -30,10 +31,9 @@ public class Entrega {
     @Column(name = "status_entrega")
     private StatusEntrega statusEntrega;
 
-    @Getter
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, nullable = false)
+    @JoinColumn(name = "id_pedido")
     private Pedido pedido;
 
     @Override

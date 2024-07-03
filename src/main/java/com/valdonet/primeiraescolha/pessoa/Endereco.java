@@ -1,5 +1,7 @@
 package com.valdonet.primeiraescolha.pessoa;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +43,11 @@ public class Endereco {
 
 	@Column(name = "estado")
 	private String estado;
+
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_pessoa", nullable = false)
+	private Pessoa pessoa;
 
 	@Override
 	public boolean equals(Object o) {

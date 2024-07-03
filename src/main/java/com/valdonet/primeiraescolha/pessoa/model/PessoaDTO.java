@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
+import com.valdonet.primeiraescolha.pessoa.Endereco;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -14,5 +15,7 @@ public class PessoaDTO {
     private String telefone;
 
     private TipoPessoa tipoPessoa;
+
+//    private Long endereco;
 
 }

@@ -1,7 +1,5 @@
 package com.valdonet.primeiraescolha.pessoa.service;
 
-import com.valdonet.primeiraescolha.cliente.model.Cliente;
-import com.valdonet.primeiraescolha.cliente.repository.ClienteRepository;
 import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import com.valdonet.primeiraescolha.pessoa.model.PessoaDTO;
 import com.valdonet.primeiraescolha.pessoa.repository.PessoaRepository;
@@ -16,11 +14,10 @@ import java.util.Optional;
 public class PessoaService {
 
     private final PessoaRepository repository;
-    private final ClienteRepository clienteRepository;
 
     public PessoaDTO getPessoa(Long id) {
 
-        Optional<PessoaDTO> pessoaDTO = repository.findPessoaPorId(id);
+        Optional<PessoaDTO> pessoaDTO = repository.findPessoaById(id);
 
         if (!pessoaDTO.isPresent()) {
             return null;
@@ -44,7 +41,8 @@ public class PessoaService {
 
     public List<Pessoa> listAllPessoas() {
 
-        List<Pessoa> pessoas = repository.findAll();
+        List<Pessoa> pessoas = repository.findAllPessoas();
+
         return pessoas;
     }
 
@@ -54,19 +52,6 @@ public class PessoaService {
 
     public void changePessoa(PessoaDTO pessoaDto) {
 
-//        Optional<Cliente> cliente = clienteRepository.findClienteByNome(pedidoDto.getCliente().getNome());
-//        if (cliente.isEmpty()) {
-//            System.out.println("Cliente não encontrado");
-//        }
-//
-//        Optional<Pessoa> pedido = repository.findById(cliente.get().getId());
-//        if (pedido.isEmpty()) {
-//            System.out.println("Pedido não encontrado.");
-//        }
-//
-//        pedido.get().setStatusPedido(pedidoDto.getStatusPedido());
-//        pedido.get().setDataPedido(pedidoDto.getDataPedido());
-//        repository.save(pedido.get());
     }
 
     public Pessoa listPessoa(Long id) {

@@ -3,8 +3,6 @@ package com.valdonet.primeiraescolha.pedido.service;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
 import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
-import com.valdonet.primeiraescolha.cliente.model.Cliente;
-import com.valdonet.primeiraescolha.cliente.repository.ClienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +14,6 @@ import java.util.Optional;
 public class PedidoService {
 
     private final PedidoRepository repository;
-    private final ClienteRepository clienteRepository;
 
     public Pedido getPedido(Long id) {
 
@@ -42,8 +39,8 @@ public class PedidoService {
 
     public List<Pedido> listAllPedidos() {
 
-        List<Pedido> clientes = repository.findAll();
-        return clientes;
+        List<Pedido> pedidos = repository.findAll();
+        return pedidos;
     }
 
     public void deleteById(Long id) {

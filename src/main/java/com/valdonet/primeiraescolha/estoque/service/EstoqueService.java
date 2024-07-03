@@ -3,7 +3,9 @@ package com.valdonet.primeiraescolha.estoque.service;
 import com.valdonet.primeiraescolha.estoque.model.Estoque;
 import com.valdonet.primeiraescolha.estoque.model.EstoqueDTO;
 import com.valdonet.primeiraescolha.estoque.repository.EstoqueRepository;
-import com.valdonet.primeiraescolha.fornecedor.repository.FornecedorRepository;
+import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
+import com.valdonet.primeiraescolha.pessoa.repository.PessoaRepository;
+import com.valdonet.primeiraescolha.produto.model.Produto;
 import com.valdonet.primeiraescolha.produto.repository.ProdutoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,35 +18,34 @@ import java.util.Optional;
 public class EstoqueService {
 
     private final EstoqueRepository repository;
-    private final FornecedorRepository fornecedorRepository;
     private final ProdutoRepository produtoRepository;
+    private final PessoaRepository pessoaRepository;
 
-    public Estoque getEstoque(Long id) {
+    public List<Produto> getEstoqueProduto(Long idProduto) {
 
-        Optional<Estoque> estoque = repository.findById(id);
+        List<Produto> produto = repository.findByEstoqueProduto(idProduto);
 
-        if (!estoque.isPresent()) {
+        if (produto.isEmpty()) {
             return null;
         }
+        return produto;
+    }
 
-        return estoque.get();
+    public List<Pessoa> getEstoquePessoa(Long idPessoa) {
+
+        List<Pessoa> pessoa = repository.findByEstoquePessoa(idPessoa);
+
+        if (pessoa.isEmpty()) {
+            return null;
+        }
+        return pessoa;
     }
 
     public Estoque save(EstoqueDTO estoqueDto) {
 
         Estoque estoque  = new Estoque();
 
-//        estoque.setStatusEstoque(pedidoDto.getStatusPedido());
-//        estoque.setDataPedido(pedidoDto.getDataPedido());
-//        estoque = repository.save(pedido);
-
         return estoque;
-    }
-
-    public List<Estoque> listAllEstoques() {
-
-        List<Estoque> estoques = repository.findAll();
-        return estoques;
     }
 
     public void deleteById(Long id) {
@@ -53,21 +54,6 @@ public class EstoqueService {
 
     public void changeEstoque(EstoqueDTO Estoqueto) {
 
-
-
-//        Optional<Cliente> cliente = repository.findClienteByNome(pedidoDto.getCliente().getNome());
-//        if (cliente.isEmpty()) {
-//            System.out.println("Cliente não encontrado");
-//        }
-//
-//        Optional<Pedido> pedido = repository.findById(cliente.get().getId());
-//        if (pedido.isEmpty()) {
-//            System.out.println("Pedido não encontrado.");
-//        }
-//
-//        pedido.get().setStatusPedido(pedidoDto.getStatusPedido());
-//        pedido.get().setDataPedido(pedidoDto.getDataPedido());
-//        repository.save(pedido.get());
     }
 
     public Estoque listEstoque(Long id) {

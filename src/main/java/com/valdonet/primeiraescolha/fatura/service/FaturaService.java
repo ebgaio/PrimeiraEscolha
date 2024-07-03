@@ -49,21 +49,8 @@ public class FaturaService {
         repository.deleteById(id);
     }
 
-    public void changeFatura(FaturaDTO aturaDto) {
+    public void changeFatura(FaturaDTO faturaDto) {
 
-//        Optional<ItemPedido> itemPedido = clienteRepository.findClienteByNome(itemPedidoDto.getCliente().getNome());
-//        if (itemPedido.isEmpty()) {
-//            System.out.println("ItemPedido não encontrado");
-//        }
-//
-//        Optional<ItemPedido> itemPedido = repository.findById(itemPedido.get().getId());
-//        if (itemPedido.isEmpty()) {
-//            System.out.println("ItemPedido não encontrado.");
-//        }
-//
-//        itemPedido.get().setStatusPedido(itemPedidoDto.getStatusPedido());
-//        itemPedido.get().setDataPedido(itemPedidoDto.getDataPedido());
-//        repository.save(itemPedido.get());
     }
 
     public Fatura listFatura(Long id) {

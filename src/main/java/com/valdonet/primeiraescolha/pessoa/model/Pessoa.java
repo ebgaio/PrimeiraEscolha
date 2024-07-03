@@ -1,24 +1,22 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.valdonet.primeiraescolha.cliente.model.Cliente;
-import com.valdonet.primeiraescolha.fornecedor.model.Fornecedor;
-import com.valdonet.primeiraescolha.funcionario.model.Funcionario;
 import com.valdonet.primeiraescolha.pessoa.Endereco;
+import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Getter
 @Setter
+@ToString
 @RequiredArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "pessoa")
 public class Pessoa {
 
@@ -36,30 +34,20 @@ public class Pessoa {
     @Column(name = "telefone")
     private String telefone;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "tipo_pessoa")
     private TipoPessoa tipoPessoa;
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
 
-    @Getter
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cliente", referencedColumnName = "id", insertable = false, updatable = false)
-    private Cliente cliente;
-
-    @Getter
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_funcionario", referencedColumnName = "id", insertable = false, updatable = false)
-    private Funcionario funcionario;
-
-    @Getter
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_fornecedor", referencedColumnName = "id", insertable = false, updatable = false)
-    private Fornecedor fornecedor;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "estoque",
+            joinColumns = @JoinColumn(name = "id_pessoa"),
+            inverseJoinColumns = @JoinColumn(name = "id_produto"))
+    private Set<Produto> produtos = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

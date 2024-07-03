@@ -11,8 +11,6 @@ CREATE TABLE ENDERECO (
     PRIMARY KEY (id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE ENDERECO ADD CONSTRAINT endereco_pessoa_fk FOREIGN KEY(id_pessoa) REFERENCES PESSOA (id);
-
 INSERT INTO ENDERECO VALUES (1, '7 de Setembro', 15, 'apt', 'Centro', 35589400, 'Uberlândia', 'Minas Gerais',1);
 INSERT INTO ENDERECO VALUES (2, 'Rua da Paz', 20, 'Casa', 'Jardim Sol', 35930265, 'Ipatinga', 'Minas Gerais',2);
 INSERT INTO ENDERECO VALUES (3, 'Avenida Brasil', 50, 'Apt 305', 'Centro', 30140071, 'Belo Horizonte', 'Minas Gerais',3);

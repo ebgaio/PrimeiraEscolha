@@ -1,13 +1,13 @@
 package com.valdonet.primeiraescolha.estoque.model;
 
-import com.valdonet.primeiraescolha.fornecedor.model.Fornecedor;
+import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import lombok.Data;
 
 @Data
 public class EstoqueDTO {
 
-    private Fornecedor fornecedor;
+    private Pessoa pessoa;
 
     private Produto produto;
 

@@ -4,6 +4,7 @@ import com.valdonet.primeiraescolha.produto.model.Produto;
 import com.valdonet.primeiraescolha.produto.model.ProdutoDTO;
 import com.valdonet.primeiraescolha.produto.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +18,7 @@ public class ProdutoService {
         this.repository = repository;
     }
 
+    @Transactional
     public Produto getProduto(Long id) {
 
         Optional<Produto> produto = repository.findById(id);

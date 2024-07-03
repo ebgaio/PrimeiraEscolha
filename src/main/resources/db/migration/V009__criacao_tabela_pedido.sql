@@ -2,12 +2,12 @@ CREATE TABLE PEDIDO (
     id BIGINT NOT NULL AUTO_INCREMENT,
 	data_pedido DATE NULL,
     status_pedido VARCHAR(30) NULL,
-    id_cliente BIGINT NOT NULL,
+    id_pessoa BIGINT NOT NULL,
     id_itenspedido BIGINT NOT NULL,
     PRIMARY KEY (id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE PEDIDO ADD CONSTRAINT pedido_cliente_fk FOREIGN KEY(id_cliente) REFERENCES CLIENTE (id);
+ALTER TABLE PEDIDO ADD CONSTRAINT pedido_pessoa_fk FOREIGN KEY(id_pessoa) REFERENCES PESSOA (id);
 
 ALTER TABLE PEDIDO ADD CONSTRAINT pedido_itenspedido_fk FOREIGN KEY(id_itenspedido) REFERENCES ITENS_PEDIDO (id);
 
