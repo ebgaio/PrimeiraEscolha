@@ -3,7 +3,6 @@ package com.valdonet.primeiraescolha.fatura.service;
 import com.valdonet.primeiraescolha.fatura.model.Fatura;
 import com.valdonet.primeiraescolha.fatura.model.FaturaDTO;
 import com.valdonet.primeiraescolha.fatura.repository.FaturaRepository;
-import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

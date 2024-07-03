@@ -38,9 +38,7 @@ public class PessoaService {
 
     public List<Pessoa> listAllPessoas() {
 
-        List<Pessoa> pessoas = repository.findAllPessoas();
-
-        return pessoas;
+        return repository.findAllPessoas();
     }
 
     public void deleteById(Long id) {

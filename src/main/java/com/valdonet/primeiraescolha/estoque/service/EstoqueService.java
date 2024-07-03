@@ -38,9 +38,7 @@ public class EstoqueService {
 
     public Estoque save(EstoqueDTO estoqueDto) {
 
-        Estoque estoque  = new Estoque();
-
-        return estoque;
+        return new Estoque();
     }
 
     public void deleteById(Long id) {
