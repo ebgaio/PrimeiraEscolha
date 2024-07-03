@@ -1,6 +1,5 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.pessoa.Endereco;
 import com.valdonet.primeiraescolha.produto.model.Produto;

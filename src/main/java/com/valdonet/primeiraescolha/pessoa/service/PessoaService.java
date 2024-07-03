@@ -19,11 +19,8 @@ public class PessoaService {
 
         Optional<PessoaDTO> pessoaDTO = repository.findPessoaById(id);
 
-        if (!pessoaDTO.isPresent()) {
-            return null;
-        }
+        return pessoaDTO.orElse(null);
 
-        return pessoaDTO.get();
     }
 
     public Pessoa save(PessoaDTO pessoaDto) {

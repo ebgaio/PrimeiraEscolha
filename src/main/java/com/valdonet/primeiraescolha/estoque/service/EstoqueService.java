@@ -4,22 +4,17 @@ import com.valdonet.primeiraescolha.estoque.model.Estoque;
 import com.valdonet.primeiraescolha.estoque.model.EstoqueDTO;
 import com.valdonet.primeiraescolha.estoque.repository.EstoqueRepository;
 import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
-import com.valdonet.primeiraescolha.pessoa.repository.PessoaRepository;
 import com.valdonet.primeiraescolha.produto.model.Produto;
-import com.valdonet.primeiraescolha.produto.repository.ProdutoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class EstoqueService {
 
     private final EstoqueRepository repository;
-    private final ProdutoRepository produtoRepository;
-    private final PessoaRepository pessoaRepository;
 
     public List<Produto> getEstoqueProduto(Long idProduto) {
 
@@ -52,7 +47,7 @@ public class EstoqueService {
         repository.deleteById(id);
     }
 
-    public void changeEstoque(EstoqueDTO Estoqueto) {
+    public void changeEstoque(EstoqueDTO Estoque) {
 
     }
 

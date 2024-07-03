@@ -52,7 +52,7 @@ public class EstoqueController {
     }
 
     @PatchMapping("/estoque")
-    public void changeEstoque(@PathVariable EstoqueDTO estoque) {
+    public void changeEstoque(@RequestBody EstoqueDTO estoque) {
         service.changeEstoque(estoque);
     }
 

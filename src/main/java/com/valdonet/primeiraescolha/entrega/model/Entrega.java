@@ -1,6 +1,5 @@
 package com.valdonet.primeiraescolha.entrega.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import jakarta.persistence.*;
@@ -8,7 +7,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 

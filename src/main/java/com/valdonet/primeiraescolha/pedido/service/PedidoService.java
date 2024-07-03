@@ -19,11 +19,8 @@ public class PedidoService {
 
         Optional<Pedido> pedido = repository.findById(id);
 
-        if (!pedido.isPresent()) {
-            return null;
-        }
+        return pedido.orElse(null);
 
-        return pedido.get();
     }
 
     public Pedido save(PedidoDTO pedidoDto) {
@@ -39,8 +36,7 @@ public class PedidoService {
 
     public List<Pedido> listAllPedidos() {
 
-        List<Pedido> pedidos = repository.findAll();
-        return pedidos;
+        return repository.findAll();
     }
 
     public void deleteById(Long id) {

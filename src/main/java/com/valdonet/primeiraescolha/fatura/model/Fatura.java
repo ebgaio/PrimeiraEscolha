@@ -1,6 +1,5 @@
 package com.valdonet.primeiraescolha.fatura.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import jakarta.persistence.*;

@@ -23,11 +23,8 @@ public class ProdutoService {
 
         Optional<Produto> produto = repository.findById(id);
 
-        if (!produto.isPresent()) {
-            return null;
-        }
+        return produto.orElse(null);
 
-        return produto.get();
     }
 
     public Produto save(ProdutoDTO produtoDto) {
@@ -43,8 +40,7 @@ public class ProdutoService {
 
     public List<Produto> listAllProdutos() {
 
-        List<Produto> produtos = repository.findAll();
-        return produtos;
+        return repository.findAll();
     }
 
     public void deleteById(Long id) {

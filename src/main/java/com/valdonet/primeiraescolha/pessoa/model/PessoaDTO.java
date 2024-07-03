@@ -1,6 +1,5 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
-import com.valdonet.primeiraescolha.pessoa.Endereco;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

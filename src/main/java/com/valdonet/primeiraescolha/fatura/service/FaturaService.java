@@ -15,17 +15,13 @@ import java.util.Optional;
 public class FaturaService {
 
     private final FaturaRepository repository;
-    private final PedidoRepository pedidoRepository;
 
     public Fatura getFatura(Long id) {
 
         Optional<Fatura> fatura = repository.findById(id);
 
-        if (!fatura.isPresent()) {
-            return null;
-        }
+        return fatura.orElse(null);
 
-        return fatura.get();
     }
 
     public Fatura save(FaturaDTO faturaDto) {
@@ -41,8 +37,7 @@ public class FaturaService {
 
     public List<Fatura> listAllFaturas() {
 
-        List<Fatura> fatura = repository.findAll();
-        return fatura;
+        return repository.findAll();
     }
 
     public void deleteById(Long id) {

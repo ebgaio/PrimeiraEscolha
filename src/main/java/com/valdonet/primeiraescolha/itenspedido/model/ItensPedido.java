@@ -1,7 +1,6 @@
 package com.valdonet.primeiraescolha.itenspedido.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
 import lombok.Getter;
