@@ -28,8 +28,7 @@ public class ItensPedido {
     @Column(name = "preco_unitario")
     private BigDecimal precoUnitario;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_produto", nullable = false)
     private Produto produto;
 

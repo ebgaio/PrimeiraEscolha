@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.pedido.service;
 
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
 import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
@@ -20,7 +21,13 @@ public class PedidoService {
         Optional<Pedido> pedido = repository.findById(id);
 
         return pedido.orElse(null);
+    }
 
+    public List<ItensPedido> listAllItensPedidos () {
+
+        List<ItensPedido> itensPedidos = repository.findAllItensPedido();
+
+        return null;
     }
 
     public Pedido save(PedidoDTO pedidoDto) {
@@ -44,20 +51,6 @@ public class PedidoService {
     }
 
     public void changePedido(PedidoDTO pedidoDto) {
-
-//        Optional<Cliente> cliente = clienteRepository.findClienteByNome(pedidoDto.getCliente().getNome());
-//        if (cliente.isEmpty()) {
-//            System.out.println("Cliente não encontrado");
-//        }
-//
-//        Optional<Pedido> pedido = repository.findById(cliente.get().getId());
-//        if (pedido.isEmpty()) {
-//            System.out.println("Pedido não encontrado.");
-//        }
-//
-//        pedido.get().setStatusPedido(pedidoDto.getStatusPedido());
-//        pedido.get().setDataPedido(pedidoDto.getDataPedido());
-//        repository.save(pedido.get());
     }
 
 }

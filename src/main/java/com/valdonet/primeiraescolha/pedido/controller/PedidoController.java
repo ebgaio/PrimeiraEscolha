@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.pedido.controller;
 
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
 import com.valdonet.primeiraescolha.pedido.service.PedidoService;
@@ -31,6 +32,14 @@ public class PedidoController {
         List<Pedido> pedido = service.listAllPedidos();
 
         return ResponseEntity.status(HttpStatus.OK).body(pedido);
+    }
+
+    @GetMapping("/pedido/itensPedido")
+    public ResponseEntity<List<ItensPedido>> listItensPedido() {
+
+        List<ItensPedido> itensPedidos = service.listAllItensPedidos();
+
+        return ResponseEntity.status(HttpStatus.OK).body(itensPedidos);
     }
 
     @PostMapping("/pedido")

@@ -13,5 +13,4 @@ public class PedidoDTO {
 
     private StatusPedido statusPedido;
 
-    List<ItensPedido> itensPedido;
 }
