@@ -37,10 +37,10 @@ public class Pessoa {
     @Column(name = "tipo_pessoa")
     private TipoPessoa tipoPessoa;
 
-    @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "estoque",

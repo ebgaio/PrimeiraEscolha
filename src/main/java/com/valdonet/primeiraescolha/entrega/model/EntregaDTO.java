@@ -13,4 +13,6 @@ public class EntregaDTO {
 
     private StatusEntrega statusEntrega;
 
+    private Pedido pedido;
+
 }

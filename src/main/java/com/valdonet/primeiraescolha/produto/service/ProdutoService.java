@@ -33,6 +33,8 @@ public class ProdutoService {
 
         produto.setNome(produtoDto.getNome());
         produto.setDescricao(produtoDto.getDescricao());
+        produto.setPreco(produtoDto.getPreco());
+        produto.setQuantidade(produtoDto.getQuantidade());
         produto = repository.save(produto);
 
         return produto;

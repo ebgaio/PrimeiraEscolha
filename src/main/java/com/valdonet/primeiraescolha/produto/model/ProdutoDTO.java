@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.produto.model;
 
+import com.valdonet.primeiraescolha.pessoa.Endereco;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,5 +13,9 @@ public class ProdutoDTO {
     private String descricao;
 
     private BigDecimal preco;
+
+    private Long quantidade;
+
+    private Endereco endereco;
 
 }

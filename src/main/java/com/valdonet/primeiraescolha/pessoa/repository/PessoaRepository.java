@@ -13,7 +13,7 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
     @Query("SELECT new com.valdonet.primeiraescolha.pessoa.model.PessoaDTO(" +
             "pessoa.nome, pessoa.sobrenome, pessoa.telefone," +
-            " pessoa.tipoPessoa) " +
+            " pessoa.tipoPessoa, pessoa.enderecos) " +
             "FROM Pessoa pessoa " +
             "WHERE pessoa.id = :id")
     Optional<PessoaDTO> findPessoaById(@Param("id") Long id);
