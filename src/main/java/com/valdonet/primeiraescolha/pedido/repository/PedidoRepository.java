@@ -8,7 +8,4 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
-
-    @Query("SELECT pedido FROM Pedido pedido")
-    List<ItensPedido> findAllItensPedido();
 }

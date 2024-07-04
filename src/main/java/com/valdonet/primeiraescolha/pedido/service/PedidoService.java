@@ -23,13 +23,6 @@ public class PedidoService {
         return pedido.orElse(null);
     }
 
-    public List<ItensPedido> listAllItensPedidos () {
-
-        List<ItensPedido> itensPedidos = repository.findAllItensPedido();
-
-        return null;
-    }
-
     public Pedido save(PedidoDTO pedidoDto) {
 
         Pedido pedido  = new Pedido();

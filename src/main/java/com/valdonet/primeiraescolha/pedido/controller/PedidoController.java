@@ -34,14 +34,6 @@ public class PedidoController {
         return ResponseEntity.status(HttpStatus.OK).body(pedido);
     }
 
-    @GetMapping("/pedido/itensPedido")
-    public ResponseEntity<List<ItensPedido>> listItensPedido() {
-
-        List<ItensPedido> itensPedidos = service.listAllItensPedidos();
-
-        return ResponseEntity.status(HttpStatus.OK).body(itensPedidos);
-    }
-
     @PostMapping("/pedido")
     public ResponseEntity<Pedido> savePedido(@RequestBody PedidoDTO pedidoDto) {
 
