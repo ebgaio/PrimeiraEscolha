@@ -3,7 +3,6 @@ package com.valdonet.primeiraescolha.entrega.model;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data

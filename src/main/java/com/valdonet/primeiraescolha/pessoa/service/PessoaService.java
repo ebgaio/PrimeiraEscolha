@@ -15,11 +15,11 @@ public class PessoaService {
 
     private final PessoaRepository repository;
 
-    public PessoaDTO getPessoa(Long id) {
+    public Pessoa getPessoa(Long id) {
 
-        Optional<PessoaDTO> pessoaDTO = repository.findPessoaById(id);
+        Optional<Pessoa> pessoa = repository.findPessoaById(id);
 
-        return pessoaDTO.orElse(null);
+        return pessoa.orElse(null);
 
     }
 
@@ -28,7 +28,7 @@ public class PessoaService {
         Pessoa pessoa  = new Pessoa ();
 
         pessoa.setNome (pessoaDto.getNome ());
-        pessoa.setSobrenome (pessoaDto.getSobreNome ());
+        pessoa.setSobrenome (pessoaDto.getSobrenome ());
         pessoa.setTipoPessoa (pessoaDto.getTipoPessoa ());
         pessoa.setTelefone (pessoaDto.getTelefone ());
         pessoa = repository.save(pessoa);

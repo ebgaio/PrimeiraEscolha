@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.valdonet.primeiraescolha.pessoa.Endereco;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.*;
 
@@ -15,6 +12,7 @@ import java.util.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
@@ -38,7 +36,7 @@ public class Pessoa {
     private TipoPessoa tipoPessoa;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Endereco> enderecos = new ArrayList<>();
+    private List<Endereco> enderecos;
 
     @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)

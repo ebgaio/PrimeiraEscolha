@@ -11,12 +11,19 @@ import java.util.Optional;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
-    @Query("SELECT new com.valdonet.primeiraescolha.pessoa.model.PessoaDTO(" +
-            "pessoa.nome, pessoa.sobrenome, pessoa.telefone," +
-            " pessoa.tipoPessoa, pessoa.enderecos) " +
-            "FROM Pessoa pessoa " +
+    @Query("SELECT pessoa FROM Pessoa pessoa " +
+            "INNER JOIN Endereco endereco " +
+            "ON pessoa.id = endereco.pessoa.id " +
             "WHERE pessoa.id = :id")
-    Optional<PessoaDTO> findPessoaById(@Param("id") Long id);
+    Optional<Pessoa> findPessoaById(@Param("id") Long id);
+
+//    @Query("SELECT new com.valdonet.primeiraescolha.pessoa.model.PessoaDTO(pessoa.nome, " +
+//            "pessoa.sobrenome, pessoa.telefone, pessoa.tipoPessoa) " +
+//            "FROM Pessoa pessoa " +
+//            "INNER JOIN Endereco endereco " +
+//            "ON pessoa.id = endereco.pessoa.id " +
+//            "WHERE pessoa.id = :id")
+//    Optional<PessoaDTO> findPessoaById(@Param("id") Long id);
 
     @Query("SELECT pessoa FROM Pessoa pessoa")
     List<Pessoa> findAllPessoas();
