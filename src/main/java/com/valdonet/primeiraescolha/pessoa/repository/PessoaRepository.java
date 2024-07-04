@@ -1,7 +1,6 @@
 package com.valdonet.primeiraescolha.pessoa.repository;
 
 import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
-import com.valdonet.primeiraescolha.pessoa.model.PessoaDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,14 +15,6 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
             "ON pessoa.id = endereco.pessoa.id " +
             "WHERE pessoa.id = :id")
     Optional<Pessoa> findPessoaById(@Param("id") Long id);
-
-//    @Query("SELECT new com.valdonet.primeiraescolha.pessoa.model.PessoaDTO(pessoa.nome, " +
-//            "pessoa.sobrenome, pessoa.telefone, pessoa.tipoPessoa) " +
-//            "FROM Pessoa pessoa " +
-//            "INNER JOIN Endereco endereco " +
-//            "ON pessoa.id = endereco.pessoa.id " +
-//            "WHERE pessoa.id = :id")
-//    Optional<PessoaDTO> findPessoaById(@Param("id") Long id);
 
     @Query("SELECT pessoa FROM Pessoa pessoa")
     List<Pessoa> findAllPessoas();

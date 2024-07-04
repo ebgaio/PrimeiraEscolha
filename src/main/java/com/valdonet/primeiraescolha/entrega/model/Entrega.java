@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.entrega.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import jakarta.persistence.*;
@@ -29,9 +30,15 @@ public class Entrega {
     @Column(name = "status_entrega")
     private StatusEntrega statusEntrega;
 
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @OneToOne
+//    @JoinColumn(name = "id_pedido")
+//    private Pedido pedido;
+
+//    @JsonIgnore
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToOne
-    @JoinColumn(name = "id_pedido")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_pedido", referencedColumnName = "id")
     private Pedido pedido;
 
     @Override

@@ -1,12 +1,13 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
 import com.valdonet.primeiraescolha.pessoa.Endereco;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Data
 public class PessoaDTO {
 
@@ -19,11 +20,4 @@ public class PessoaDTO {
     private TipoPessoa tipoPessoa;
 
     private List<Endereco> enderecos;
-
-    public PessoaDTO (String nome, String sobrenome, String telefone, TipoPessoa tipoPessoa) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.telefone = telefone;
-        this.tipoPessoa = tipoPessoa;
-    }
 }

@@ -35,7 +35,7 @@ public class Pedido {
 
     @Getter
 //    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItensPedido> itensPedido = new ArrayList<>();
 
     @JsonIgnore
