@@ -3,7 +3,7 @@
     data_fatura DATE NULL,
     valor_total BIGINT NOT NULL,
     status_fatura VARCHAR(30) NOT NULL,
-    id_pedido BIGINT NULL,
+    id_pedido BIGINT NOT NULL,
     PRIMARY KEY (id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

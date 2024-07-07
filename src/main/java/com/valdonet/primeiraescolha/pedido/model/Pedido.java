@@ -35,13 +35,11 @@ public class Pedido {
     @Column(name = "status_pedido")
     private StatusPedido statusPedido;
 
-    @Getter
-//    @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ItensPedido> itensPedido = new ArrayList<>();
+    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+    private List<ItensPedido> itensPedido;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pessoa", referencedColumnName = "id")
     private Pessoa pessoa;
 

@@ -28,7 +28,7 @@ public class EstoqueService {
 
     public List<Pessoa> getEstoquePessoa(Long idPessoa) {
 
-        List<Pessoa> pessoa = repository.findByEstoquePessoa(idPessoa);
+        List<Pessoa> pessoa = repository.findByEstoqueByPessoa(idPessoa);
 
         if (pessoa.isEmpty()) {
             return null;

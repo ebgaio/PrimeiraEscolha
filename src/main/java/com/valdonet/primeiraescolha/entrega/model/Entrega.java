@@ -30,7 +30,7 @@ public class Entrega {
     @Column(name = "status_entrega")
     private StatusEntrega statusEntrega;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pedido", referencedColumnName = "id")
     private Pedido pedido;

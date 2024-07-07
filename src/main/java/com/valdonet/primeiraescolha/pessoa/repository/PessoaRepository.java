@@ -23,7 +23,7 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
            "JOIN Pessoa pessoa " +
            "ON pessoa.id = endereco.pessoa.id " +
            "WHERE pessoa.id = :idPessoa")
-    List<Endereco> findAllEnderecoByIdPessoa(@Param("idPessoa") Long idPessoa);
+    Endereco findAllEnderecoByIdPessoa(@Param("idPessoa") Long idPessoa);
 
     @Query("SELECT pessoa FROM Pessoa pessoa " +
            "WHERE pessoa.id = :idPessoa")

@@ -16,7 +16,7 @@ public class EntregaDTO {
 
     private Pedido pedido;
 
-    public EntregaDTO (Long id,LocalDateTime dataEntrega, StatusEntrega statusEntrega, Pedido pedido) {
+    public EntregaDTO (Long id, LocalDateTime dataEntrega, StatusEntrega statusEntrega, Pedido pedido) {
         this.id = id;
         this.dataEntrega = dataEntrega;
         this.statusEntrega = statusEntrega;

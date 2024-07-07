@@ -1,6 +1,8 @@
 package com.valdonet.primeiraescolha.itenspedido.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -25,12 +27,15 @@ public class ItensPedido {
     @Column(name = "quantidade")
     private Long quantidade;
 
-    @Column(name = "preco_unitario")
-    private BigDecimal precoUnitario;
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_produto", nullable = false)
     private Produto produto;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
 
     @Override
     public boolean equals(Object o) {

@@ -2,6 +2,7 @@ package com.valdonet.primeiraescolha.itenspedido.controller;
 
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedidoDTO;
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedidoDTOPedido;
 import com.valdonet.primeiraescolha.itenspedido.service.ItensPedidoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,17 +19,17 @@ public class ItensPedidoController {
     private final ItensPedidoService service;
 
     @GetMapping("/itenspedido/{id}")
-    public ResponseEntity getItensPedido(@PathVariable("id") Long id) {
+    public ResponseEntity<ItensPedidoDTOPedido> getItensPedido(@PathVariable("id") Long id) {
 
-        ItensPedido itensPedido = service.getItensPedido(id);
+        ItensPedidoDTOPedido itensPedido = service.getItensPedido(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(itensPedido);
     }
 
     @GetMapping("/itenspedido")
-    public ResponseEntity<List<ItensPedido>> listAllItensPedidos() {
+    public ResponseEntity<List<ItensPedidoDTOPedido>> listAllItensPedidos() {
 
-        List<ItensPedido> itensPedido = service.listAllItensPedidos ();
+        List<ItensPedidoDTOPedido> itensPedido = service.listAllItensPedidos ();
 
         return ResponseEntity.status(HttpStatus.OK).body(itensPedido);
     }

@@ -18,6 +18,6 @@ public class PessoaDTO {
 
     private TipoPessoa tipoPessoa;
 
-    private List<Endereco> enderecos;
+    private Endereco endereco;
 
 }

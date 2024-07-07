@@ -43,8 +43,8 @@ public class Endereco {
 	private String estado;
 
 	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_pessoa", nullable = false)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_pessoa", referencedColumnName = "id")
 	private Pessoa pessoa;
 
 	@Override

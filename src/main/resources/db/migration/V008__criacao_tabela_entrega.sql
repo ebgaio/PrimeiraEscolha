@@ -2,7 +2,7 @@
 	id BIGINT NOT NULL,
     data_entrega DATE NULL,
     status_entrega VARCHAR(30) NOT NULL,
-    id_pedido BIGINT NULL,
+    id_pedido BIGINT NOT NULL,
     PRIMARY KEY (id)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

@@ -2,6 +2,7 @@ package com.valdonet.primeiraescolha.itenspedido.service;
 
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedidoDTO;
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedidoDTOPedido;
 import com.valdonet.primeiraescolha.itenspedido.repository.ItensPedidoRepository;
 import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
 import lombok.AllArgsConstructor;
@@ -17,9 +18,9 @@ public class ItensPedidoService {
     private final ItensPedidoRepository repository;
     private final PedidoRepository pedidoRepository;
 
-    public ItensPedido getItensPedido(Long id) {
+    public ItensPedidoDTOPedido getItensPedido(Long id) {
 
-        Optional<ItensPedido> itensPedido = repository.findById(id);
+        Optional<ItensPedidoDTOPedido> itensPedido = repository.findAllItensOedidoById(id);
 
         if (!itensPedido.isPresent()) {
             return null;
@@ -28,20 +29,19 @@ public class ItensPedidoService {
         return itensPedido.get();
     }
 
+    public List<ItensPedidoDTOPedido> listAllItensPedidos() {
+
+        List<ItensPedidoDTOPedido> itensPedido = repository.findAllItensOedido();
+        return itensPedido;
+    }
+
     public ItensPedido save(ItensPedidoDTO itensPedidoDto) {
 
         ItensPedido itensPedido  = new ItensPedido ();
 
         itensPedido.setQuantidade (itensPedidoDto.getQuantidade ());
-        itensPedido.setPrecoUnitario (itensPedidoDto.getPrecoUnitario ());
         itensPedido = repository.save(itensPedido);
 
-        return itensPedido;
-    }
-
-    public List<ItensPedido> listAllItensPedidos() {
-
-        List<ItensPedido> itensPedido = repository.findAll();
         return itensPedido;
     }
 

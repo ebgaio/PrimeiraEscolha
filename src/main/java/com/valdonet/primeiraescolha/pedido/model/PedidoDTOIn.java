@@ -1,6 +1,7 @@
 package com.valdonet.primeiraescolha.pedido.model;
 
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
+import com.valdonet.primeiraescolha.itenspedido.model.ItensPedidoDTO;
 import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,8 +17,8 @@ public class PedidoDTOIn {
 
     private StatusPedido statusPedido;
 
-    private Pessoa pessoa;
+    private Long idPessoa;
 
-    private List<ItensPedido> itensPedidos;
+    private List<ItensPedidoDTO> itensPedidos;
 
 }

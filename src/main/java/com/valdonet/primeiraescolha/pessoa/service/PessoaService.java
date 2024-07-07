@@ -18,11 +18,11 @@ public class PessoaService {
 
     public PessoaDTO getPessoa(Long idPessoa) {
 
-        List<Endereco> enderecos = repository.findAllEnderecoByIdPessoa(idPessoa);
+        Endereco endereco = repository.findAllEnderecoByIdPessoa(idPessoa);
         Optional<Pessoa> pessoa = repository.findPessoaById(idPessoa);
 
         PessoaDTO pessoaDTO = new PessoaDTO();
-        pessoaDTO.setEnderecos(enderecos);
+        pessoaDTO.setEndereco(endereco);
         pessoaDTO.setNome(pessoa.get().getNome());
         pessoaDTO.setSobrenome(pessoa.get().getSobrenome());
         pessoaDTO.setTelefone(pessoa.get().getTelefone());

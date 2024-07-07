@@ -21,7 +21,6 @@ INSERT INTO ENDERECO VALUES (7, 'Rua Oscar Freire', 675, 'Bloco A', 'Jardins', 0
 INSERT INTO ENDERECO VALUES (8, 'Rua São Clemente', 286, 'Apt 1001', 'Botafogo', 22260000, 'Rio de Janeiro', 'Rio de Janeiro',8);
 INSERT INTO ENDERECO VALUES (9, 'Largo da Carioca', 10, 'Sala 507', 'Centro', 20050020, 'Rio de Janeiro', 'Rio de Janeiro',9);
 INSERT INTO ENDERECO VALUES (10, 'Rua das Laranjeiras', 450, 'Apt 302', 'Laranjeiras', 22240005, 'Rio de Janeiro', 'Rio de Janeiro',10);
-INSERT INTO ENDERECO VALUES (11, 'Rua Harmonia', 305, 'Casa 2', 'Vila Madalena', 05435000, 'São Paulo', 'São Paulo',10);
 INSERT INTO ENDERECO VALUES (12, 'Rua Nascimento Silva', 107, 'Apt 204', 'Ipanema', 22421020, 'Rio de Janeiro', 'Rio de Janeiro',11);
 INSERT INTO ENDERECO VALUES (13, 'Avenida Atlântica', 1702, 'Apt 404', 'Copacabana', 22021000, 'Rio de Janeiro', 'Rio de Janeiro',12);
 INSERT INTO ENDERECO VALUES (14, 'Rua Teixeira de Melo', 45, 'Loft', 'Ipanema', 22410030, 'Rio de Janeiro', 'Rio de Janeiro',13);
@@ -52,7 +51,6 @@ INSERT INTO ENDERECO VALUES (38, 'Rua Manoel Barreto', 175, 'Apt 1001', 'Graça'
 INSERT INTO ENDERECO VALUES (39, 'Avenida Oceânica', 814, 'Apt 1201', 'Barra', 40140060, 'Salvador', 'Bahia',39);
 INSERT INTO ENDERECO VALUES (40, 'Rua Afonso Celso', 885, 'Apt 803', 'Barra', 40140120, 'Salvador', 'Bahia',40);
 INSERT INTO ENDERECO VALUES (41, 'Avenida Anita Garibaldi', 1815, 'Sala 604', 'Ondina', 40170110, 'Salvador', 'Bahia',41);
-INSERT INTO ENDERECO VALUES (42, 'Rua Padre Feijó', 240, 'Loja 2', 'Canela', 40110060, 'Salvador', 'Bahia',41);
 INSERT INTO ENDERECO VALUES (43, 'Rua Recife', 222, 'Pavilhão', 'Pituba', 41830380, 'Salvador', 'Bahia',42);
 INSERT INTO ENDERECO VALUES (44, 'Rua Rio Grande do Sul', 765, 'Sala 3', 'Pituba', 41830380, 'Salvador', 'Bahia',43);
 INSERT INTO ENDERECO VALUES (45, 'Rua Pernambuco', 398, 'Loteamento', 'Pituba', 41830380, 'Salvador', 'Bahia',44);
@@ -70,19 +68,5 @@ INSERT INTO ENDERECO VALUES (56, 'Rua da Paciência', 257, 'Apt 202', 'Rio Verme
 INSERT INTO ENDERECO VALUES (57, 'Rua Professor Sabino Silva', 361, 'Apt 902', 'Chame-Chame', 40157110, 'Salvador', 'Bahia',56);
 INSERT INTO ENDERECO VALUES (58, 'Rua Professora Almerinda Dultra', 55, 'Casa 1', 'Rio Vermelho', 41940020, 'Salvador', 'Bahia',57);
 INSERT INTO ENDERECO VALUES (59, 'Rua Eurycles de Matos', 626, 'Apt 1202', 'Ondina', 40170100, 'Salvador', 'Bahia',58);
-INSERT INTO ENDERECO VALUES (60, 'Rua Visconde de Itaboraí', 939, 'Sala 3', 'Comércio', 40015070, 'Salvador', 'Bahia',45);
 INSERT INTO ENDERECO VALUES (61, 'Praça Conselheiro Almeida Couto', 500, 'Bloco A', 'Nazaré', 40050000, 'Salvador', 'Bahia',60);
-INSERT INTO ENDERECO VALUES (62, 'Rua Saldanha Marinho', 46, 'Loja 6', 'Barra', 40140030, 'Salvador', 'Bahia',19);
-INSERT INTO ENDERECO VALUES (63, 'Rua Professor Soeiro Pereira Gomes', 108, 'Apt 501', 'Ondina', 40170901, 'Salvador', 'Bahia',46);
-INSERT INTO ENDERECO VALUES (64, 'Avenida Princesa Isabel', 14, 'Apt 905', 'Barra', 40140160, 'Salvador', 'Bahia',41);
-INSERT INTO ENDERECO VALUES (65, 'Avenida Presidente Vargas', 1910, 'Apt 805', 'Amaralina', 41900000, 'Salvador', 'Bahia',26);
-INSERT INTO ENDERECO VALUES (66, 'Rua Miguel Burnier', 265, 'Apt 405', 'Ondina', 40130000, 'Salvador', 'Bahia',40);
-INSERT INTO ENDERECO VALUES (67, 'Rua Monge Ambrósio', 289, 'Apt 302', 'Amaralina', 41905010, 'Salvador', 'Bahia',31);
-INSERT INTO ENDERECO VALUES (68, 'Avenida Oceânica', 3001, 'Apt 407', 'Barra', 40170002, 'Salvador', 'Bahia',38);
-INSERT INTO ENDERECO VALUES (69, 'Rua Manuelle Barbuda', 3, 'Casa 12', 'Ondina', 40170040, 'Salvador', 'Bahia',28);
-INSERT INTO ENDERECO VALUES (70, 'Rua Oswaldo Cruz', 154, 'Apt 207', 'Rio Vermelho', 40140020, 'Salvador', 'Bahia',35);
-INSERT INTO ENDERECO VALUES (71, 'Rua Sabino Silva', 206, 'Apt 607', 'Chame-Chame', 40157160, 'Salvador', 'Bahia',36);
-INSERT INTO ENDERECO VALUES (72, 'Avenida Simon Bolivar', 455, 'Apt 107', 'Ondina', 40130000, 'Salvador', 'Bahia',23);
 INSERT INTO ENDERECO VALUES (73, 'Praça Brigadeiro Faria Rocha', 100, 'Sala 908', 'Rio Vermelho', 41940200, 'Salvador', 'Bahia',22);
-INSERT INTO ENDERECO VALUES (74, 'Rua Aristides Novis', 123, 'Apt 803', 'Federação', 40210901, 'Salvador', 'Bahia',11);
-INSERT INTO ENDERECO VALUES (75, 'Rua Marechal Floriano', 88, 'Apt 505', 'Canela', 40110130, 'Salvador', 'Bahia',33);

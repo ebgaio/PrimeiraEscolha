@@ -1,21 +1,21 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.valdonet.primeiraescolha.entrega.model.Entrega;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.pessoa.Endereco;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
@@ -38,15 +38,15 @@ public class Pessoa {
     @Column(name = "tipo_pessoa")
     private TipoPessoa tipoPessoa;
 
+    @OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL)
+    private Endereco endereco;
+
     @JsonIgnore
     @OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL)
     private Pedido pedido;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Endereco> enderecos;
-
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "estoque",
             joinColumns = @JoinColumn(name = "id_pessoa"),
