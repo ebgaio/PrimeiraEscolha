@@ -17,28 +17,6 @@ public class EntregaService {
     private final EntregaRepository repository;
     private final PedidoRepository pedidoRepository;
 
-    public Entrega getEntrega(Long id) {
-
-        Optional<Entrega> entrega = repository.findById(id);
-
-        if (!entrega.isPresent()) {
-            return null;
-        }
-
-        return entrega.get();
-    }
-
-    public Entrega save(EntregaDTO entregaDto) {
-
-        Entrega entrega  = new Entrega();
-
-        entrega.setDataEntrega (entregaDto.getDataEntrega ());
-        entrega.setStatusEntrega (entregaDto.getStatusEntrega ());
-        entrega = repository.save(entrega);
-
-        return entrega;
-    }
-
     public List<EntregaDTO> listAllEntregas() {
 
         List<EntregaDTO> entregas = repository.findAllEntrega();
@@ -54,6 +32,17 @@ public class EntregaService {
     public EntregaDTO listEntregaByPedido(Long idPedido) {
 
         EntregaDTO entrega = repository.findEntregaByIdPedido(idPedido);
+        return entrega;
+    }
+
+    public Entrega save(EntregaDTO entregaDto) {
+
+        Entrega entrega  = new Entrega();
+
+        entrega.setDataEntrega (entregaDto.getDataEntrega ());
+        entrega.setStatusEntrega (entregaDto.getStatusEntrega ());
+        entrega = repository.save(entrega);
+
         return entrega;
     }
 

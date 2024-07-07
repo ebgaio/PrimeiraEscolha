@@ -26,7 +26,7 @@ public class EntregaController {
     }
 
     @GetMapping("/entrega/{idEntrega}")
-    public ResponseEntity<EntregaDTO> listIEntregas(@PathVariable("idEntrega") Long idEntrega) {
+    public ResponseEntity<EntregaDTO> listEntregas(@PathVariable("idEntrega") Long idEntrega) {
 
         EntregaDTO entrega = service.listEntregaByEntrega(idEntrega);
 
@@ -34,7 +34,7 @@ public class EntregaController {
     }
 
     @GetMapping("/entrega/pedido/{idPedido}")
-    public ResponseEntity<EntregaDTO> listAllIEntregas(@PathVariable("idPedido") Long idPedido) {
+    public ResponseEntity<EntregaDTO> listAllEntregas(@PathVariable("idPedido") Long idPedido) {
 
         EntregaDTO entrega = service.listEntregaByPedido(idPedido);
 

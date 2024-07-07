@@ -1,8 +1,7 @@
 package com.valdonet.primeiraescolha.pedido.controller;
 
-import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
-import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
+import com.valdonet.primeiraescolha.pedido.model.PedidoDTOIn;
 import com.valdonet.primeiraescolha.pedido.service.PedidoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -35,15 +34,15 @@ public class PedidoController {
     }
 
     @PostMapping("/pedido")
-    public ResponseEntity<Pedido> savePedido(@RequestBody PedidoDTO pedidoDto) {
+    public ResponseEntity<Pedido> savePedido(@RequestBody PedidoDTOIn pedidoDtoIn) {
 
-        Pedido pedidoSave = service.save(pedidoDto);
+        Pedido pedidoSave = service.save(pedidoDtoIn);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(pedidoSave);
     }
 
     @PatchMapping("/pedido")
-    public void changePedido(@PathVariable PedidoDTO pedido) {
+    public void changePedido(@PathVariable PedidoDTOIn pedido) {
         service.changePedido(pedido);
     }
 

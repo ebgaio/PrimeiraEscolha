@@ -3,7 +3,6 @@ package com.valdonet.primeiraescolha.pessoa.model;
 import com.valdonet.primeiraescolha.pessoa.Endereco;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
@@ -20,4 +19,5 @@ public class PessoaDTO {
     private TipoPessoa tipoPessoa;
 
     private List<Endereco> enderecos;
+
 }

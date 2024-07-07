@@ -2,8 +2,9 @@ package com.valdonet.primeiraescolha.pedido.service;
 
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
 import com.valdonet.primeiraescolha.pedido.model.Pedido;
-import com.valdonet.primeiraescolha.pedido.model.PedidoDTO;
+import com.valdonet.primeiraescolha.pedido.model.PedidoDTOIn;
 import com.valdonet.primeiraescolha.pedido.repository.PedidoRepository;
+import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,12 +24,19 @@ public class PedidoService {
         return pedido.orElse(null);
     }
 
-    public Pedido save(PedidoDTO pedidoDto) {
+    public Pedido save(PedidoDTOIn pedidoDtoIn) {
 
         Pedido pedido  = new Pedido();
+        Pessoa pessoa = new Pessoa();
+        pessoa.setId(pedidoDtoIn.getPessoa().getId());
+        ItensPedido itensPedido = new ItensPedido();
 
-        pedido.setStatusPedido(pedidoDto.getStatusPedido());
-        pedido.setDataPedido(pedidoDto.getDataPedido());
+//        itensPedido.setQuantidade(pedidoDtoIn.getItensPedidos().);
+
+        pedido.setPessoa(pessoa);
+        pedido.setStatusPedido(pedidoDtoIn.getStatusPedido());
+        pedido.setDataPedido(pedidoDtoIn.getDataPedido());
+        pedido.setItensPedido(pedidoDtoIn.getItensPedidos());
         pedido = repository.save(pedido);
 
         return pedido;
@@ -43,7 +51,7 @@ public class PedidoService {
         repository.deleteById(id);
     }
 
-    public void changePedido(PedidoDTO pedidoDto) {
+    public void changePedido(PedidoDTOIn pedidoDtoIn) {
     }
 
 }

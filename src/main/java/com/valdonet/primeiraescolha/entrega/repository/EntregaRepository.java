@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface EntregaRepository extends JpaRepository<Entrega, Long> {
 
-    @Query("SELECT new com.valdonet.primeiraescolha.entrega.model.EntregaDTO(entrega.dataEntrega, entrega.statusEntrega, entrega.pedido)" +
+    @Query("SELECT new com.valdonet.primeiraescolha.entrega.model.EntregaDTO(entrega.id, entrega.dataEntrega, entrega.statusEntrega, entrega.pedido)" +
            "FROM Entrega entrega " +
            "JOIN Pedido pedido " +
            "ON entrega.pedido.id = pedido.id " +
@@ -21,14 +21,14 @@ public interface EntregaRepository extends JpaRepository<Entrega, Long> {
            "ON pedido.id = itensPedido.id")
     List<EntregaDTO> findAllEntrega();
 
-    @Query("SELECT new com.valdonet.primeiraescolha.entrega.model.EntregaDTO(entrega.dataEntrega, entrega.statusEntrega, entrega.pedido)" +
+    @Query("SELECT new com.valdonet.primeiraescolha.entrega.model.EntregaDTO(entrega.id, entrega.dataEntrega, entrega.statusEntrega, entrega.pedido)" +
             "FROM Entrega entrega " +
             "JOIN Pedido pedido " +
             "ON entrega.pedido.id = pedido.id " +
             "WHERE entrega.id = :idEntrega")
     EntregaDTO findEntregaByIdEntrega(@Param("idEntrega") Long idEntrega);
 
-    @Query("SELECT new com.valdonet.primeiraescolha.entrega.model.EntregaDTO(entrega.dataEntrega, entrega.statusEntrega, entrega.pedido)" +
+    @Query("SELECT new com.valdonet.primeiraescolha.entrega.model.EntregaDTO(entrega.id, entrega.dataEntrega, entrega.statusEntrega, entrega.pedido)" +
             "FROM Entrega entrega " +
             "JOIN Pedido pedido " +
             "ON entrega.pedido.id = pedido.id " +
