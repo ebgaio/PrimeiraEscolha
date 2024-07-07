@@ -18,9 +18,9 @@ public class PessoaController {
     private final PessoaService service;
 
     @GetMapping("/pessoa/{id}")
-    public ResponseEntity<Pessoa> getPessoa(@PathVariable("id") Long id) {
+    public ResponseEntity<PessoaDTO> getPessoa(@PathVariable("id") Long id) {
 
-        Pessoa pessoa = service.getPessoa(id);
+        PessoaDTO pessoa = service.getPessoa(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(pessoa);
     }

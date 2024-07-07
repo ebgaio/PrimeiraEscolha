@@ -18,7 +18,7 @@ public class PedidoService {
 
     public Pedido getPedido(Long id) {
 
-        Optional<Pedido> pedido = repository.findById(id);
+        Optional<Pedido> pedido = repository.findPedidoById(id);
 
         return pedido.orElse(null);
     }

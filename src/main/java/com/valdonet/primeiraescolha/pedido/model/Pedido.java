@@ -1,9 +1,11 @@
 package com.valdonet.primeiraescolha.pedido.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valdonet.primeiraescolha.entrega.model.Entrega;
 import com.valdonet.primeiraescolha.fatura.model.Fatura;
 import com.valdonet.primeiraescolha.itenspedido.model.ItensPedido;
+import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +37,11 @@ public class Pedido {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItensPedido> itensPedido;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_pessoa", referencedColumnName = "id")
+    private Pessoa pessoa;
 
     @JsonIgnore
     @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)

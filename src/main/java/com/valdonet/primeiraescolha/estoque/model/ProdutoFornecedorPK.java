@@ -14,8 +14,6 @@ public class ProdutoFornecedorPK {
     private Long pessoa;
     private Long produto;
 
-    // getters and setters
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

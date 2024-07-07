@@ -23,4 +23,12 @@ public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
             "WHERE estoque.pessoa.id = :idPessoa")
     List<Pessoa> findByEstoquePessoa(@Param("idPessoa") Long idPessoa);
 
+    @Query("SELECT estoque FROM Estoque estoque " +
+           "INNER JOIN Pessoa pessoa " +
+           "ON estoque.pessoa.id = pessoa.id " +
+           "INNER JOIN Produto produto " +
+           "ON estoque.produto.id = produto.id " +
+           "WHERE pessoa.tipoPessoa = 'FORNECEDOR'")
+    List<Estoque> findAllEstoque();
+
 }

@@ -17,26 +17,26 @@ public class EntregaController {
 
     private final EntregaService service;
 
-    @GetMapping("/entrega/{id}")
-    public ResponseEntity getEntrega(@PathVariable("id") Long id) {
-
-        Entrega entrega = service.getEntrega(id);
-
-        return ResponseEntity.status(HttpStatus.OK).body(entrega);
-    }
-
     @GetMapping("/entrega")
-    public ResponseEntity<List<Entrega>> listAllIEntregas() {
+    public ResponseEntity<List<EntregaDTO>> listAllIEntregas() {
 
-        List<Entrega> entrega = service.listAllEntregas();
+        List<EntregaDTO> entrega = service.listAllEntregas();
 
         return ResponseEntity.status(HttpStatus.OK).body(entrega);
     }
 
-    @GetMapping("/entrega/cliente/{cliente}")
-    public ResponseEntity<Entrega> listAllEntregas(@PathVariable Long id) {
+    @GetMapping("/entrega/{idEntrega}")
+    public ResponseEntity<EntregaDTO> listIEntregas(@PathVariable("idEntrega") Long idEntrega) {
 
-        Entrega entrega = service.listEntrega(id);
+        EntregaDTO entrega = service.listEntregaByEntrega(idEntrega);
+
+        return ResponseEntity.status(HttpStatus.OK).body(entrega);
+    }
+
+    @GetMapping("/entrega/pedido/{idPedido}")
+    public ResponseEntity<EntregaDTO> listAllIEntregas(@PathVariable("idPedido") Long idPedido) {
+
+        EntregaDTO entrega = service.listEntregaByPedido(idPedido);
 
         return ResponseEntity.status(HttpStatus.OK).body(entrega);
     }
@@ -54,8 +54,4 @@ public class EntregaController {
         service.changeEntrega(entrega);
     }
 
-    @DeleteMapping("/entrega/{id}")
-    public void deleteEntrega(@PathVariable Long id) {
-        service.deleteById(id);
-    }
 }

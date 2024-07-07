@@ -36,6 +36,13 @@ public class EstoqueService {
         return pessoa;
     }
 
+    public List<Estoque> getAllEstoque () {
+
+        List<Estoque> estoque = repository.findAllEstoque();
+
+        return estoque;
+    }
+
     public Estoque save(EstoqueDTO estoqueDto) {
 
         return new Estoque();
@@ -52,4 +59,5 @@ public class EstoqueService {
     public Estoque listEstoque(Long id) {
         return repository.findById(id).orElse(null);
     }
+
 }

@@ -16,12 +16,12 @@ import lombok.Setter;
 public class Estoque {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pessoa")
     private Pessoa pessoa;
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_produto")
     private Produto produto;
 

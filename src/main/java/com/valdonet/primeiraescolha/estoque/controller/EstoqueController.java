@@ -35,10 +35,10 @@ public class EstoqueController {
         return ResponseEntity.status(HttpStatus.OK).body(pessoa);
     }
 
-    @GetMapping("/estoque/{id}")
-    public ResponseEntity<Estoque> listAllEstoques(@PathVariable Long id) {
+    @GetMapping("/estoque")
+    public ResponseEntity<List<Estoque>> getAllEstoque() {
 
-        Estoque estoque = service.listEstoque(id);
+        List<Estoque> estoque = service.getAllEstoque();
 
         return ResponseEntity.status(HttpStatus.OK).body(estoque);
     }

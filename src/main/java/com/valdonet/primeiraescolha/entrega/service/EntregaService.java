@@ -39,34 +39,25 @@ public class EntregaService {
         return entrega;
     }
 
-    public List<Entrega> listAllEntregas() {
+    public List<EntregaDTO> listAllEntregas() {
 
-        List<Entrega> entrega = repository.findAll();
+        List<EntregaDTO> entregas = repository.findAllEntrega();
+        return entregas;
+    }
+
+    public EntregaDTO listEntregaByEntrega(Long idEntrega) {
+
+        EntregaDTO entrega = repository.findEntregaByIdEntrega(idEntrega);
         return entrega;
     }
 
-    public void deleteById(Long id) {
-        repository.deleteById(id);
+    public EntregaDTO listEntregaByPedido(Long idPedido) {
+
+        EntregaDTO entrega = repository.findEntregaByIdPedido(idPedido);
+        return entrega;
     }
 
     public void changeEntrega(EntregaDTO entregaDto) {
 
-//        Optional<ItemPedido> itemPedido = clienteRepository.findClienteByNome(itemPedidoDto.getCliente().getNome());
-//        if (itemPedido.isEmpty()) {
-//            System.out.println("ItemPedido não encontrado");
-//        }
-//
-//        Optional<ItemPedido> itemPedido = repository.findById(itemPedido.get().getId());
-//        if (itemPedido.isEmpty()) {
-//            System.out.println("ItemPedido não encontrado.");
-//        }
-//
-//        itemPedido.get().setStatusPedido(itemPedidoDto.getStatusPedido());
-//        itemPedido.get().setDataPedido(itemPedidoDto.getDataPedido());
-//        repository.save(itemPedido.get());
-    }
-
-    public Entrega listEntrega(Long id) {
-        return repository.findById(id).orElse(null);
     }
 }

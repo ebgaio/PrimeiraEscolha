@@ -14,4 +14,9 @@ public class EntregaDTO {
 
     private Pedido pedido;
 
+    public EntregaDTO (LocalDateTime dataEntrega, StatusEntrega statusEntrega, Pedido pedido) {
+        this.dataEntrega = dataEntrega;
+        this.statusEntrega = statusEntrega;
+        this.pedido = pedido;
+    }
 }

@@ -1,5 +1,6 @@
 package com.valdonet.primeiraescolha.pessoa.service;
 
+import com.valdonet.primeiraescolha.pessoa.Endereco;
 import com.valdonet.primeiraescolha.pessoa.model.Pessoa;
 import com.valdonet.primeiraescolha.pessoa.model.PessoaDTO;
 import com.valdonet.primeiraescolha.pessoa.repository.PessoaRepository;
@@ -15,12 +16,26 @@ public class PessoaService {
 
     private final PessoaRepository repository;
 
-    public Pessoa getPessoa(Long id) {
+    public PessoaDTO getPessoa(Long idPessoa) {
 
-        Optional<Pessoa> pessoa = repository.findPessoaById(id);
+        List<Endereco> enderecos = repository.findAllEnderecoByIdPessoa(idPessoa);
+        Optional<Pessoa> pessoa = repository.findPessoaById(idPessoa);
 
-        return pessoa.orElse(null);
+        PessoaDTO pessoaDTO = new PessoaDTO();
+        pessoaDTO.setEnderecos(enderecos);
+        pessoaDTO.setNome(pessoa.get().getNome());
+        pessoaDTO.setSobrenome(pessoa.get().getSobrenome());
+        pessoaDTO.setTelefone(pessoa.get().getTelefone());
+        pessoaDTO.setTipoPessoa(pessoa.get().getTipoPessoa());
 
+        return pessoaDTO;
+    }
+
+    public List<Pessoa> listAllPessoas() {
+
+        List<Pessoa> pessoas = repository.findAllPessoas();
+
+        return pessoas;
     }
 
     public Pessoa save(PessoaDTO pessoaDto) {
@@ -34,11 +49,6 @@ public class PessoaService {
         pessoa = repository.save(pessoa);
 
         return pessoa;
-    }
-
-    public List<Pessoa> listAllPessoas() {
-
-        return repository.findAllPessoas();
     }
 
     public void deleteById(Long id) {

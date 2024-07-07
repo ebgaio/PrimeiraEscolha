@@ -1,6 +1,9 @@
 package com.valdonet.primeiraescolha.pessoa.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.valdonet.primeiraescolha.entrega.model.Entrega;
+import com.valdonet.primeiraescolha.pedido.model.Pedido;
 import com.valdonet.primeiraescolha.pessoa.Endereco;
 import com.valdonet.primeiraescolha.produto.model.Produto;
 import jakarta.persistence.*;
@@ -34,6 +37,10 @@ public class Pessoa {
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_pessoa")
     private TipoPessoa tipoPessoa;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL)
+    private Pedido pedido;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos;

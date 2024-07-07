@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @Data
 public class PessoaDTO {
 
